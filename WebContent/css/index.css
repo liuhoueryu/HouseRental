@@ -1,0 +1,56 @@
+#index{
+    margin-top: 0px;
+    float: left;
+}
+#index span{
+    float: right;
+}
+#user{
+    margin-top: 0px;
+    float: right;
+}
+#user span{
+    float: right;
+}
+#bts{
+    width: 200px;
+    height: 60px;
+    border: none;
+	background-color:#5FB878;
+    color: white;
+    outline:none;
+    cursor: pointer;
+    font-size: x-large;
+    font-weight:bold;
+    margin-right: 30px;
+}
+#bts:hover{
+	background: rgba(95,184,120,0.8)
+}
+#btt{
+    width: 200px;
+    height: 50px;
+    border: none;
+    background: rgba(255,140,0,0);
+    color: rgba(192,192,192,0.9);
+    outline:none;
+    cursor: pointer;
+    font-size: medium;
+}
+#btt:hover{
+    background: rgba(255,140,0,0);
+    color:white;
+}
+#btn{
+    margin-left:25px;
+    width: 70px;
+    height: 50px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    outline:none;
+    cursor: pointer;
+    border: none;
+}
+#btn:hover{
+    background: rgba(0,0,0,1);
+}
