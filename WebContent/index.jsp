@@ -57,7 +57,7 @@
 					class="layui-badge-dot"></span></a></li>
 			<li class="layui-nav-item" lay-unselect=""><a
 				href="javascript:;"><img src="image/photo/<%=user.getPhoto()%>"
-					class="layui-nav-img">我</a>
+					class="layui-nav-img"><%=user.getUsername() %></a>
 				<dl class="layui-nav-child">
 					<dd>
 						<a href="javascript:location='user_register.jsp';">新用户注册</a>
@@ -75,33 +75,38 @@
 		
 		<span>
 		<ul class="layui-nav">
-			<li class="layui-nav-item"><a href="">最新活动</a></li>
-			<li class="layui-nav-item layui-this"><a href="javascript:;">产品</a>
+			<li class="layui-nav-item"><a href="HotSellers.jsp">最新活动</a></li>
+			<li class="layui-nav-item"><a href="javascript:;">相关下载</a>
 				<dl class="layui-nav-child">
 					<dd>
-						<a href="">产品介绍</a>
+						<a href="download/2.docx">隐私条约</a>
 					</dd>
 					<dd>
 						<a href="">免责说明</a>
 					</dd>
 					<dd>
-						<a href="">协议下载</a>
+						<a href="download/1.docx">用户入住协议</a>
 					</dd>
 				</dl></li>
-			<li class="layui-nav-item"><a href="">大数据</a></li>
-			<li class="layui-nav-item"><a href="javascript:;">解决方案</a>
+			<li class="layui-nav-item"><a href="">产品使用</a>
 				<dl class="layui-nav-child">
 					<dd>
-						<a href="">移动模块</a>
+						<a href="">全国价格分析</a>
 					</dd>
 					<dd>
-						<a href="">后台模版</a>
+						<a href="data.jsp">可视化</a>
+					</dd>
+					<dd>
+						<a href="room_query.jsp">住房查询</a>
+					</dd>
+				</dl></li>
+			<li class="layui-nav-item"><a href="javascript:;">待开发功能</a>
+				<dl class="layui-nav-child">
+					<dd class="layui-this">
+						<a href="">正在开发</a>
 					</dd>
 					<dd class="layui-this">
-						<a href="">选中项</a>
-					</dd>
-					<dd>
-						<a href="">电商平台</a>
+						<a href="">敬请期待</a>
 					</dd>
 				</dl></li>
 			<li class="layui-nav-item"><a href="">社区</a></li>

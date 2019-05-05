@@ -233,4 +233,24 @@
     <servlet-name>HouseQueryServlet</servlet-name>
     <url-pattern>/HouseQueryServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UploadSingleServlet</display-name>
+    <servlet-name>UploadSingleServlet</servlet-name>
+    <servlet-class>com.neuedu.servlet.UploadSingleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UploadSingleServlet</servlet-name>
+    <url-pattern>/UploadSingleServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RoomQueryServlet</display-name>
+    <servlet-name>RoomQueryServlet</servlet-name>
+    <servlet-class>com.neuedu.servlet.RoomQueryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RoomQueryServlet</servlet-name>
+    <url-pattern>/RoomQueryServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

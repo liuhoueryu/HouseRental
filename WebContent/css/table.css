@@ -1,0 +1,82 @@
+#text{
+    padding: 0 6px 0 6px;
+    background: #E1FFFF;
+    font-size: 14px;
+    width: 80px;
+    height: 30px;
+    border: none;
+    outline: none;
+}
+#text:hover{
+	background: #FFE4B5;
+}
+#tet{
+    padding: 0 6px 0 6px;
+    background: #E1FFFF;
+    font-size: 14px;
+    width: 240px;
+    height: 30px;
+    border: none;
+    outline: none;
+}
+#tet:hover{
+	background: #FFE4B5;
+}
+#regtime{
+    padding: 0 6px 0 6px;
+    background: #E1FFFF;
+    font-size: 14px;
+    width: 120px;
+    height: 30px;
+    border: none;
+    outline: none;
+}
+#regtime:hover{
+	background: rgba(186,85,211,0.5);
+}
+#tes{
+    padding: 0 6px 0 6px;
+    background: #E1FFFF;
+    font-size: 14px;
+    width: 240px;
+    height: 30px;
+    border: none;
+    outline: none;
+}
+#tes:hover{
+	background: rgba(186,85,211,0.5);
+}
+#teb{
+    padding: 0 6px 0 6px;
+    background: #E1FFFF;
+    font-size: 14px;
+    width: 240px;
+    height: 30px;
+    border: none;
+    outline: none;
+}
+#teb:hover{
+	background: rgba(186,85,211,0.5);
+}
+tr{
+
+    background: rgba(240,255,255,0.5);
+    height:25px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+tr:hover{
+    background: rgba(100,100,100,0.5);
+}
+#btv{
+    width: 70px;
+    height: 30px;
+    border: none;
+    background: rgba(240,255,255,0.3);
+    color: #FFFFFF;
+    outline: none;
+    cursor: pointer;
+}
+#btv:hover{
+    background: rgba(240,255,255,0.5);
+}

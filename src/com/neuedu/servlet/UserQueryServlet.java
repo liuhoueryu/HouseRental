@@ -32,7 +32,7 @@ public class UserQueryServlet extends HttpServlet {
 		String regtime = request.getParameter("regtime");
 		String begin = "";
 		String end = "";
-		
+		System.out.println("user:"+username);
 		//д╛хож╣
 		if(username==null){
 			username = ""; 
@@ -54,7 +54,7 @@ public class UserQueryServlet extends HttpServlet {
 			begin = request.getParameter("begin");
 			end = request.getParameter("end");
 		}
-		
+		System.out.println("user:"+username);
 		UserService userService = new UserServiceImpl();
 		
 		List<User> list = userService.getUserList(username, gender, job, begin, end);
