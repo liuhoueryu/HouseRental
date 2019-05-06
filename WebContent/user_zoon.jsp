@@ -1,16 +1,13 @@
+<%@page import="java.util.List"%>
+<%@page import="com.neuedu.entity.Room"%>
 <%@page import="com.neuedu.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>主页</title>
-<meta name="renderer" content="webkit">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1">
-
+<meta charset="UTF-8">
+<title>Insert title here</title>
 <link rel="icon" href="images/favicon.ico"/>
 <link rel="stylesheet" href="css/citybox.css"/>
 <link rel="stylesheet" href="exjs/layui.css" media="all">
@@ -53,7 +50,7 @@
 		<ul class="layui-nav">
 			<li class="layui-nav-item"><a href="">未读消息<span
 					class="layui-badge">9</span></a></li>
-			<li class="layui-nav-item"><a href="user_zoon.jsp">个人中心<span
+			<li class="layui-nav-item"><a href="">个人中心<span
 					class="layui-badge-dot"></span></a></li>
 			<li class="layui-nav-item" lay-unselect=""><a
 				href="javascript:;"><img src="image/photo/<%=user.getPhoto()%>"
@@ -91,7 +88,7 @@
 			<li class="layui-nav-item"><a href="">产品使用</a>
 				<dl class="layui-nav-child">
 					<dd>
-						<a href="house_query.jsp">全国价格分析</a>
+						<a href="">全国价格分析</a>
 					</dd>
 					<dd>
 						<a href="data.jsp">可视化</a>
@@ -116,9 +113,7 @@
 	</div>
 </header>
 <body>
-<body style="background-image: url('img/bg_index.jpg');background-repeat: no-repeat;background-size: 100%;margin: 0">
-
-	<script src="exjs/layui.all.js" charset="utf-8"></script>
+<script src="exjs/layui.all.js" charset="utf-8"></script>
 	<script src="exjs/element.js" charset="utf-8"></script>
 
 	<script>
@@ -132,23 +127,62 @@
 			});
 		});
 	</script>
-<div class="box" onclick="javascript:location='house_query.jsp'" style="cursor:pointer;margin-top: 240px;">
-	<ul class="minbox">
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-	</ul>
-	<ol class="maxbox">
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-	</ol>
-</div>
+	<%
+		//登录检查
+		if (session.getAttribute("user") == null) { //未登录
+	%>
+
+	<script>
+		alert("对不起，您尚未登录，请先登录");
+		location = "user_login.jsp";
+	</script>
+
+	<%
+		return;
+		}
+	%>	
+	<%
+		if (request.getAttribute("list") == null) {
+			response.sendRedirect("RoomBook?userid="+user.getUserid());
+			return;
+		}
+	%>
+	
+	<%
+		List<Room> list = (List<Room>) request.getAttribute("list");
+
+	%>
+	
+	<div style="margin-top: 100px;" align="center">
+			<form action="RoomBook" method="post">
+			<font style="font-size: xx-large;">您的订单已呈现</font>
+			<table border="1" style="width:50%;text-align: center;font-size: large; margin-top: 50px;">
+					<tr>
+						<td>房号</td>
+						<td>类型</td>
+						<td>价格</td>
+						<td>距离</td>
+						<td>操作</td>
+					</tr>
+					<%
+						for (Room room : list) {
+					%>
+					<tr>
+						<td><%=room.getRoomid()%></td>
+						<td><%=room.getType()%></td>
+						<td><%=room.getPrice()%></td>
+						<td><%=room.getDistance()%></td>
+						<td><a href="OrderRoom?userid=<%=user.getUserid()%>&roomid=<%=room.getRoomid()  %>" 
+							onclick="return confirm('是否预订房间号为【<%=room.getRoomid()%>】,类型为【<%=room.getType() %>】，价位【<%=room.getPrice() %>元】的房间')">预订</a></td>
+					</tr>
+					<%
+						}
+					%>
+
+
+				</table>
+				</form>
+
+		</div>
 </body>
 </html>

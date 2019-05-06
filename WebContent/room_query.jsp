@@ -226,7 +226,7 @@ html, body {
 						<td><%=room.getType()%></td>
 						<td><%=room.getPrice()%></td>
 						<td><%=room.getDistance()%></td>
-						<td><a href="" 
+						<td><a href="OrderRoom?userid=<%=user.getUserid()%>&roomid=<%=room.getRoomid()  %>" 
 							onclick="return confirm('是否预订房间号为【<%=room.getRoomid()%>】,类型为【<%=room.getType() %>】，价位【<%=room.getPrice() %>元】的房间')">预订</a></td>
 					</tr>
 					<%

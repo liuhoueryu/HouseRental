@@ -1,19 +1,16 @@
+<%@page import="com.neuedu.entity.Room"%>
+<%@page import="java.util.List"%>
 <%@page import="com.neuedu.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>主页</title>
-<meta name="renderer" content="webkit">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1">
-
+<meta charset="UTF-8">
+<title>Insert title here</title>
 <link rel="icon" href="images/favicon.ico"/>
-<link rel="stylesheet" href="css/citybox.css"/>
 <link rel="stylesheet" href="exjs/layui.css" media="all">
+<link rel="stylesheet" href="layout/css/layui.css"  media="all">
 <link rel="stylesheet" href="css/index.css" />
 <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
 </head>
@@ -53,7 +50,7 @@
 		<ul class="layui-nav">
 			<li class="layui-nav-item"><a href="">未读消息<span
 					class="layui-badge">9</span></a></li>
-			<li class="layui-nav-item"><a href="user_zoon.jsp">个人中心<span
+			<li class="layui-nav-item"><a href="">个人中心<span
 					class="layui-badge-dot"></span></a></li>
 			<li class="layui-nav-item" lay-unselect=""><a
 				href="javascript:;"><img src="image/photo/<%=user.getPhoto()%>"
@@ -91,7 +88,7 @@
 			<li class="layui-nav-item"><a href="">产品使用</a>
 				<dl class="layui-nav-child">
 					<dd>
-						<a href="house_query.jsp">全国价格分析</a>
+						<a href="">全国价格分析</a>
 					</dd>
 					<dd>
 						<a href="data.jsp">可视化</a>
@@ -116,9 +113,7 @@
 	</div>
 </header>
 <body>
-<body style="background-image: url('img/bg_index.jpg');background-repeat: no-repeat;background-size: 100%;margin: 0">
-
-	<script src="exjs/layui.all.js" charset="utf-8"></script>
+<script src="exjs/layui.all.js" charset="utf-8"></script>
 	<script src="exjs/element.js" charset="utf-8"></script>
 
 	<script>
@@ -132,23 +127,56 @@
 			});
 		});
 	</script>
-<div class="box" onclick="javascript:location='house_query.jsp'" style="cursor:pointer;margin-top: 240px;">
-	<ul class="minbox">
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-	</ul>
-	<ol class="maxbox">
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-	</ol>
-</div>
+	<%
+		//登录检查
+		if (session.getAttribute("user") == null) { //未登录
+	%>
+
+	<script>
+		alert("对不起，您尚未登录，请先登录");
+		location = "user_login.jsp";
+	</script>
+
+	<%
+		return;
+		}
+	%>	
+	<%
+		if (request.getAttribute("list") == null) {
+			response.sendRedirect("UserInformation?userid="+user.getUserid());
+			return;
+		}
+	%>
+	
+	<%
+		List<Room> list = (List<Room>) request.getAttribute("list");
+
+	%>
+	
+	<div style="margin-top: 100px;" >
+
+			<center><font style="font-size: xx-large;">您的消息</font></center>
+			<div style="margin: 50px 300px;">
+				<ul class="layui-timeline">
+					
+					<%
+						for (Room room : list) {
+					%>
+  					<li class="layui-timeline-item">
+    					<i class="layui-icon layui-timeline-axis"></i>
+    						<div class="layui-timeline-content layui-text">
+      						<div class="layui-timeline-title"><font size="4px;">您于<%=room.getOrderTime()%>时间，预定了房间</font></div>
+    					</div>
+  					</li>
+					<%
+						}
+					%>
+
+
+				</ul>
+			</div>    
+
+		</div>
+		<script src="layout/layui.all.js" charset="utf-8"></script>
 </body>
 </html>

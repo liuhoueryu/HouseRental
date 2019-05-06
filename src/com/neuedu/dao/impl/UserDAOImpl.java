@@ -3,6 +3,7 @@ package com.neuedu.dao.impl;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.neuedu.dao.UserDAO;
@@ -12,7 +13,12 @@ import com.neuedu.util.DBManager;
 public class UserDAOImpl implements UserDAO {
 
 	private DBManager dbManager = DBManager.getInstance();
-
+	@Override
+	public boolean addRoom(int roomid,int userid,Date orderTime) {
+		String sql = "insert into roomOrder values(?,?,?)";
+		return dbManager.execUpdate(sql, roomid,userid,orderTime);
+	}
+	
 	@Override
 	public User updatePassword(String username,String password) {
 		String sql = "update user set password = ? where username = ?";

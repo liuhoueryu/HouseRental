@@ -1,5 +1,6 @@
 package com.neuedu.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import com.neuedu.entity.User;
@@ -21,5 +22,7 @@ public interface UserDAO {
 	boolean deleteUser(int userid);
 	
 	boolean deleteUser(String[] userids);
+	
+	boolean addRoom(int roomid,int userid,Date orderTime);
 	
 }

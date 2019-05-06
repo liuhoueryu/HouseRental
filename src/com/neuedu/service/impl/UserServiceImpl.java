@@ -1,6 +1,7 @@
 package com.neuedu.service.impl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -10,8 +11,12 @@ import com.neuedu.entity.User;
 import com.neuedu.service.UserService;
 
 public class UserServiceImpl implements UserService {
-
+	
 	private UserDAO userDAO = new UserDAOImpl();   //×éºÏ
+	@Override
+	public boolean addRoom(int roomid,int userid,Date orderTime) {
+		return userDAO.addRoom(roomid,userid,orderTime);
+	}
 	@Override
 	public User retrieveUserPassword(String username, String password) {
 		

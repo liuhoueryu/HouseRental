@@ -9,7 +9,14 @@ import com.neuedu.service.RoomService;
 
 public class RoomServiceImpl implements RoomService {
 	private RoomDAO roomDAO = new RoomDAOImpl();
-
+	@Override
+	public List<Room> getUserInformation(int userid) {
+		return roomDAO.findUserInformation(userid);
+	}
+	@Override
+	public List<Room> getUserRoomList(int userid) {
+		return roomDAO.findUserRoomList(userid);
+	}
 	@Override
 	public List<Room> getRoomList(String type, String minPrice, String maxPrice, String minDistance, String maxDistance,
 			int page) {

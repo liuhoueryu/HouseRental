@@ -253,4 +253,34 @@
     <servlet-name>RoomQueryServlet</servlet-name>
     <url-pattern>/RoomQueryServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>OrderRoom</display-name>
+    <servlet-name>OrderRoom</servlet-name>
+    <servlet-class>com.neuedu.servlet.OrderRoom</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OrderRoom</servlet-name>
+    <url-pattern>/OrderRoom</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RoomBook</display-name>
+    <servlet-name>RoomBook</servlet-name>
+    <servlet-class>com.neuedu.servlet.RoomBook</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RoomBook</servlet-name>
+    <url-pattern>/RoomBook</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserInformation</display-name>
+    <servlet-name>UserInformation</servlet-name>
+    <servlet-class>com.neuedu.servlet.UserInformation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserInformation</servlet-name>
+    <url-pattern>/UserInformation</url-pattern>
+  </servlet-mapping>
 </web-app>

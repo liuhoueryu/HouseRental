@@ -6,4 +6,6 @@ import com.neuedu.entity.Room;
 
 public interface RoomService {
 	List<Room> getRoomList(String type,String minPrice,String maxPrice,String minDistance,String maxDistance,int page);
+	List<Room> getUserRoomList(int userid);
+	List<Room> getUserInformation(int userid);
 }
