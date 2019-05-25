@@ -25,12 +25,12 @@ public class RoomQueryServlet extends HttpServlet {
 		request.setCharacterEncoding(charSet);
 
 		// 转码
-		// request.setCharacterEncoding("utf-8");
+		// request.setCharacterEncoding("utf-8")
 		// 接收数据
 		String type = request.getParameter("type");
 		String minPrice = request.getParameter("minPrice");
 		String maxPrice = request.getParameter("maxPrice");
-		String minDistance = request.getParameter("minPrice");
+		String minDistance = request.getParameter("minDistance");
 		String maxDistance = request.getParameter("maxDistance");
 		String index=request.getParameter("index");
 		String prepage=request.getParameter("prepage");

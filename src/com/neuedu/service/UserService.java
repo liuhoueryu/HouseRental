@@ -23,4 +23,6 @@ public interface UserService {
 	
 	boolean addRoom(int roomid,int userid,Date orderTime);
 	
+	boolean delRoom(int roomid,int userid);
+	
 }

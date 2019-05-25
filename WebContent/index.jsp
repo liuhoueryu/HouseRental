@@ -13,10 +13,39 @@
 
 <link rel="icon" href="images/favicon.ico"/>
 <link rel="stylesheet" href="css/citybox.css"/>
+<link rel="stylesheet" href="css/citybox2.css"/>
+<link rel="stylesheet" href="css/citybox3.css"/>
+<link rel="stylesheet" href="css/citybox4.css"/>
 <link rel="stylesheet" href="exjs/layui.css" media="all">
 <link rel="stylesheet" href="css/index.css" />
 <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
 </head>
+<script type="text/javascript">
+function turnBox1(){
+	
+	box1.style.display="none";
+	box2.style.display="";
+
+}
+function turnBox2(){
+	
+	box3.style.display="";
+	box2.style.display="none";
+
+}
+function turnBox3(){
+	
+	box4.style.display="";
+	box3.style.display="none";
+
+}
+function turnBox4(){
+	
+	box1.style.display="";
+	box4.style.display="none";
+
+}
+</script>
 <%
 	//登录检查
 	if(session.getAttribute("user")==null){   //未登录
@@ -51,7 +80,7 @@
 	style="height: 60px; background: #393D49; color: white">
 	<div id="user">
 		<ul class="layui-nav">
-			<li class="layui-nav-item"><a href="">未读消息<span
+			<li class="layui-nav-item"><a href="user_information.jsp">通知消息<span
 					class="layui-badge">9</span></a></li>
 			<li class="layui-nav-item"><a href="user_zoon.jsp">个人中心<span
 					class="layui-badge-dot"></span></a></li>
@@ -109,7 +138,7 @@
 						<a href="">敬请期待</a>
 					</dd>
 				</dl></li>
-			<li class="layui-nav-item"><a href="">社区</a></li>
+			<li class="layui-nav-item"><a href="user_query.jsp">高级</a></li>
 		</ul>
 		</span>
 		<span><input id="bts" type="button" value="House" onclick="window.location.href='index.jsp'"/></span>
@@ -132,7 +161,61 @@
 			});
 		});
 	</script>
-<div class="box" onclick="javascript:location='house_query.jsp'" style="cursor:pointer;margin-top: 240px;">
+<div id="box1" class="box" onclick="turnBox1()" style="cursor:pointer;margin-top: 240px;">
+	<ul class="minbox">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<ol class="maxbox">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ol>
+</div>
+<div id="box2" class="box2" onclick="turnBox2()" style="cursor:pointer;margin-top: 240px;display: none;">
+	<ul class="minbox">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<ol class="maxbox">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ol>
+</div>
+<div id="box3" class="box3" onclick="turnBox3()" style="cursor:pointer;margin-top: 240px;display: none;">
+	<ul class="minbox">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<ol class="maxbox">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ol>
+</div>
+<div id="box4" class="box4" onclick="turnBox4()" style="cursor:pointer;margin-top: 240px;display: none;">
 	<ul class="minbox">
 		<li></li>
 		<li></li>

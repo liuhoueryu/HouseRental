@@ -10,6 +10,18 @@
 #text:hover{
 	background: #FFE4B5;
 }
+#teo{
+    padding: 0 6px 0 6px;
+    background: #FFE4B5;
+    font-size: 14px;
+    width: 60px;
+    height: 30px;
+    border: none;
+    outline: none;
+}
+#teo:hover{
+	background: #FFE4B5;
+}
 #tet{
     padding: 0 6px 0 6px;
     background: #E1FFFF;

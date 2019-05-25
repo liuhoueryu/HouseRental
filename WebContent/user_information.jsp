@@ -1,3 +1,4 @@
+<%@page import="java.util.Collections"%>
 <%@page import="com.neuedu.entity.Room"%>
 <%@page import="java.util.List"%>
 <%@page import="com.neuedu.entity.User"%>
@@ -7,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>您的消息</title>
 <link rel="icon" href="images/favicon.ico"/>
 <link rel="stylesheet" href="exjs/layui.css" media="all">
 <link rel="stylesheet" href="layout/css/layui.css"  media="all">
@@ -48,9 +49,9 @@
 	style="height: 60px; background: #393D49; color: white">
 	<div id="user">
 		<ul class="layui-nav">
-			<li class="layui-nav-item"><a href="">未读消息<span
+			<li class="layui-nav-item"><a href="user_information.jsp">通知消息<span
 					class="layui-badge">9</span></a></li>
-			<li class="layui-nav-item"><a href="">个人中心<span
+			<li class="layui-nav-item"><a href="user_zoon.jsp">个人中心<span
 					class="layui-badge-dot"></span></a></li>
 			<li class="layui-nav-item" lay-unselect=""><a
 				href="javascript:;"><img src="image/photo/<%=user.getPhoto()%>"
@@ -88,7 +89,7 @@
 			<li class="layui-nav-item"><a href="">产品使用</a>
 				<dl class="layui-nav-child">
 					<dd>
-						<a href="">全国价格分析</a>
+						<a href="house_query.jsp">全国价格分析</a>
 					</dd>
 					<dd>
 						<a href="data.jsp">可视化</a>
@@ -106,7 +107,7 @@
 						<a href="">敬请期待</a>
 					</dd>
 				</dl></li>
-			<li class="layui-nav-item"><a href="">社区</a></li>
+			<li class="layui-nav-item"><a href="user_query.jsp">高级</a></li>
 		</ul>
 		</span>
 		<span><input id="bts" type="button" value="House" onclick="window.location.href='index.jsp'"/></span>
@@ -150,6 +151,7 @@
 	
 	<%
 		List<Room> list = (List<Room>) request.getAttribute("list");
+	    Collections.reverse(list); 
 
 	%>
 	
@@ -165,7 +167,7 @@
   					<li class="layui-timeline-item">
     					<i class="layui-icon layui-timeline-axis"></i>
     						<div class="layui-timeline-content layui-text">
-      						<div class="layui-timeline-title"><font size="4px;">您于<%=room.getOrderTime()%>时间，预定了房间</font></div>
+      						<div class="layui-timeline-title"><font size="4px;">您于<%=room.getOrderTime()%> 时刻，预定了房间</font></div>
     					</div>
   					</li>
 					<%

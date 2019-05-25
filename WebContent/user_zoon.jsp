@@ -48,9 +48,9 @@
 	style="height: 60px; background: #393D49; color: white">
 	<div id="user">
 		<ul class="layui-nav">
-			<li class="layui-nav-item"><a href="">未读消息<span
+			<li class="layui-nav-item"><a href="user_information.jsp">通知消息<span
 					class="layui-badge">9</span></a></li>
-			<li class="layui-nav-item"><a href="">个人中心<span
+			<li class="layui-nav-item"><a href="user_zoon.jsp">个人中心<span
 					class="layui-badge-dot"></span></a></li>
 			<li class="layui-nav-item" lay-unselect=""><a
 				href="javascript:;"><img src="image/photo/<%=user.getPhoto()%>"
@@ -88,7 +88,7 @@
 			<li class="layui-nav-item"><a href="">产品使用</a>
 				<dl class="layui-nav-child">
 					<dd>
-						<a href="">全国价格分析</a>
+						<a href="house_query.jsp">全国价格分析</a>
 					</dd>
 					<dd>
 						<a href="data.jsp">可视化</a>
@@ -106,7 +106,7 @@
 						<a href="">敬请期待</a>
 					</dd>
 				</dl></li>
-			<li class="layui-nav-item"><a href="">社区</a></li>
+			<li class="layui-nav-item"><a href="user_query.jsp">高级</a></li>
 		</ul>
 		</span>
 		<span><input id="bts" type="button" value="House" onclick="window.location.href='index.jsp'"/></span>
@@ -172,8 +172,8 @@
 						<td><%=room.getType()%></td>
 						<td><%=room.getPrice()%></td>
 						<td><%=room.getDistance()%></td>
-						<td><a href="OrderRoom?userid=<%=user.getUserid()%>&roomid=<%=room.getRoomid()  %>" 
-							onclick="return confirm('是否预订房间号为【<%=room.getRoomid()%>】,类型为【<%=room.getType() %>】，价位【<%=room.getPrice() %>元】的房间')">预订</a></td>
+						<td><a href="DeleteOrderRoom?userid=<%=user.getUserid()%>&roomid=<%=room.getRoomid()  %>" 
+							onclick="return confirm('是否取消房间号为【<%=room.getRoomid()%>】,类型为【<%=room.getType() %>】，价位【<%=room.getPrice() %>元】的订单')">取消</a></td>
 					</tr>
 					<%
 						}

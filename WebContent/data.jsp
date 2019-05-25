@@ -44,13 +44,13 @@
 	style="height: 60px; background: #393D49; color: white">
 	<div id="user">
 		<ul class="layui-nav">
-			<li class="layui-nav-item"><a href="">未读消息<span
+			<li class="layui-nav-item"><a href="user_information.jsp">通知消息<span
 					class="layui-badge">9</span></a></li>
-			<li class="layui-nav-item"><a href="">个人中心<span
+			<li class="layui-nav-item"><a href="user_zoon.jsp">个人中心<span
 					class="layui-badge-dot"></span></a></li>
 			<li class="layui-nav-item" lay-unselect=""><a
 				href="javascript:;"><img src="image/photo/<%=user.getPhoto()%>"
-					class="layui-nav-img">我</a>
+					class="layui-nav-img"><%=user.getUsername() %></a>
 				<dl class="layui-nav-child">
 					<dd>
 						<a href="javascript:location='user_register.jsp';">新用户注册</a>
@@ -81,31 +81,28 @@
 						<a href="download/1.docx">用户入住协议</a>
 					</dd>
 				</dl></li>
-			<li class="layui-nav-item"><a href="">大数据</a>
+			<li class="layui-nav-item"><a href="">产品使用</a>
 				<dl class="layui-nav-child">
 					<dd>
-						<a href="">全国价格分析</a>
+						<a href="house_query.jsp">全国价格分析</a>
 					</dd>
 					<dd>
-						<a href="">可视化</a>
+						<a href="data.jsp">可视化</a>
+					</dd>
+					<dd>
+						<a href="room_query.jsp">住房查询</a>
 					</dd>
 				</dl></li>
-			<li class="layui-nav-item"><a href="javascript:;">解决方案</a>
+			<li class="layui-nav-item"><a href="javascript:;">待开发功能</a>
 				<dl class="layui-nav-child">
-					<dd>
-						<a href="">移动模块</a>
-					</dd>
-					<dd>
-						<a href="">后台模版</a>
+					<dd class="layui-this">
+						<a href="">正在开发</a>
 					</dd>
 					<dd class="layui-this">
-						<a href="">选中项</a>
-					</dd>
-					<dd>
-						<a href="">电商平台</a>
+						<a href="">敬请期待</a>
 					</dd>
 				</dl></li>
-			<li class="layui-nav-item"><a href="">社区</a></li>
+			<li class="layui-nav-item"><a href="user_query.jsp">高级</a></li>
 		</ul>
 		</span>
 		<span><input id="bts" type="button" value="House" onclick="window.location.href='index.jsp'"/></span>

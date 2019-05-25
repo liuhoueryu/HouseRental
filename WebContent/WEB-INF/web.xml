@@ -283,4 +283,14 @@
     <servlet-name>UserInformation</servlet-name>
     <url-pattern>/UserInformation</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteOrderRoom</display-name>
+    <servlet-name>DeleteOrderRoom</servlet-name>
+    <servlet-class>com.neuedu.servlet.DeleteOrderRoom</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteOrderRoom</servlet-name>
+    <url-pattern>/DeleteOrderRoom</url-pattern>
+  </servlet-mapping>
 </web-app>

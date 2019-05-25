@@ -14,6 +14,11 @@ public class UserDAOImpl implements UserDAO {
 
 	private DBManager dbManager = DBManager.getInstance();
 	@Override
+	public boolean delRoom(int roomid, int userid) {
+		String sql = "delete from roomOrder where roomid= ? and userid= ?";
+		return dbManager.execUpdate(sql, roomid,userid);
+	}
+	@Override
 	public boolean addRoom(int roomid,int userid,Date orderTime) {
 		String sql = "insert into roomOrder values(?,?,?)";
 		return dbManager.execUpdate(sql, roomid,userid,orderTime);
@@ -92,7 +97,7 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public boolean insertUser(User user) {
 
-		String sql = "insert into user values(null, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "insert into user values(null, ?, ?, ?, ?, ?, ?, ?, ?, ?, null)";
 		return 
 			dbManager.execUpdate(sql, user.getUsername(), user.getPassword(), user.getScore(), user.getPhoto(),
 			user.getGender(), user.getJob(), user.getInterest(), user.getRegtime(), user.getPhonenumber());

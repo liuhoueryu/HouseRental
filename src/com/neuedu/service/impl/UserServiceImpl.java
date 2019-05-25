@@ -11,8 +11,11 @@ import com.neuedu.entity.User;
 import com.neuedu.service.UserService;
 
 public class UserServiceImpl implements UserService {
-	
 	private UserDAO userDAO = new UserDAOImpl();   //×éºÏ
+	@Override
+	public boolean delRoom(int roomid, int userid) {
+		return userDAO.delRoom(roomid, userid);
+	}
 	@Override
 	public boolean addRoom(int roomid,int userid,Date orderTime) {
 		return userDAO.addRoom(roomid,userid,orderTime);
